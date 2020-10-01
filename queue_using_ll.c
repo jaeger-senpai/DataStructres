@@ -2,18 +2,18 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-typedef struct Node{
+typedef struct node{
     int data;
-    struct Node* next;
-}nodetype;
+    struct node* next;
+}Node;
 
-nodetype* insert(nodetype*);
-nodetype* delete(nodetype*);
-void display(nodetype*);
+Node* insert(Node*);
+Node* del(Node*);
+void display(Node*);
 
 int main(){
     int ch;
-    nodetype *Front = NULL,*Rear = NULL;
+    Node *Front = NULL,*Rear = NULL;
     do{
         printf("\n1 Insert\n2 Delete\n3 Display\n4 Exit\nEnter your choice: ");
         scanf("%d",&ch);
@@ -24,7 +24,7 @@ int main(){
                     Front = Rear;
                 break;
             case 2:
-                Front = delete(Front);
+                Front = del(Front);
                 if(Front == NULL)
                     Rear = NULL;
                 break;
@@ -36,10 +36,10 @@ int main(){
     return 0;
 }
 
-nodetype* insert(nodetype* rear){
+Node* insert(Node* rear){
     int n;
-    nodetype *p = NULL;
-    p = (nodetype*)malloc(sizeof(nodetype));
+    Node *p = NULL;
+    p = (Node*)malloc(sizeof(Node));
     if(p != NULL){
         printf("\nEnter value to insert: ");
         scanf("%d",&n);
@@ -55,8 +55,8 @@ nodetype* insert(nodetype* rear){
     return rear;
 }
 
-nodetype* delete(nodetype* front){
-    nodetype *p = NULL;
+Node* del(Node* front){
+    Node *p = NULL;
     if(front == NULL)
         printf("\nNothing to delete\n");
     else{
@@ -68,7 +68,7 @@ nodetype* delete(nodetype* front){
     return front;
 }
 
-void display(nodetype* front){
+void display(Node* front){
     if(front == NULL)
         printf("Nothing to Display\n");
     else{
