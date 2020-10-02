@@ -70,7 +70,7 @@ int main()
 
     printf("\n\n----------------------------------\n\n");
     printlist(&head);
-    printf("\n\n----------------------------------\n\n\n deletion of 2\n\nNew List\n");
+    printf("\n\n----------------------------------\n\n\n deletion of 1\n\nNew List\n");
     deletenode(&head,1);
     printlist(&head);
 
