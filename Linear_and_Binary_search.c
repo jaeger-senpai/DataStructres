@@ -1,6 +1,5 @@
 /*Author:Alok Khulbay
-Date:-17/08/2020
-Purpose:-To self learn.
+Date:-11/10/2020
 */
 #include <stdio.h>
 int Linear_Search(int arr[], int size, int element)
